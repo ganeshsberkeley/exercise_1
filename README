@@ -1,0 +1,1 @@
+load_data_lake.sh -> bash script to unzip the master file and rename the files to remove spaces.  Then it pushes the renamed files to hadoop 
