@@ -5,16 +5,17 @@
 
 DIR="hospital_compare" 
 
-cp -rf Hospital_Revised_Flatfiles.zip $DIR
 
 if [ -d "$DIR" ]
 then
 	echo "$DIR directory  exists!"
+	rm -rf $DIR
 else
 	echo "$DIR directory not found!"
-	mkdir $DIR
 fi
+mkdir $DIR
 
+cp -rf Hospital_Revised_Flatfiles.zip $DIR
 
 echo
 echo
