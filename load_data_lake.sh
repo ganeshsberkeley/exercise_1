@@ -56,6 +56,11 @@ do
         new_fname=`echo $file | tr " " "_"`
         echo Moving $file $new_fname
         mv -f "$file" $new_fname
+	if [ $new_fname == "Medicare_Hospital_Spending_by_Claim.csv" ]
+	then
+		tail -n +2 $new_fname > temp1
+		mv -f temp1 $new_fname
+	fi
 	cp -rf $new_fname $rn_backup
 done < temp
 rm temp
@@ -67,7 +72,12 @@ ls *csv > temp
 while read file
 do
 	echo "Removing Headers for $file"
-	tail -n +2 $file > temp1
+	if [ $file == "Medicare_Hospital_Spending_by_Claim.csv" ]
+	then
+		tail -n +3 $file > temp1
+	else
+		tail -n +2 $file > temp1
+	fi
 	mv -f temp1 $file
 done < temp
 rm temp
@@ -87,6 +97,12 @@ done < temp
 rm temp
 echo
 echo
+
+echo "Copying the extract_header.pl to renamed backup directory"
+cp ../extract_header.pl $rn_backup
+
+echo "Please run the $DIR/$rn_backup/extract_header.pl in the $DIR/$rn_backup Directory"
+echo "Copy the hive_base_ddl.sql to whereever you want and run hive -f hive_base_ddl.sql"
 
 cd ..
 

@@ -31,25 +31,30 @@ for(my$i = 0; $i<=$#file_list; $i++)
 	printf($out "DROP TABLE IF EXISTS %s;\n", $table) ;
 	printf($out "CREATE EXTERNAL TABLE %s\n", $table) ;
 	printf($out "(\n") ;
-	$size = @fields ;
-	for(my$j = 0; $j < $size; $j++ ) {
-		$token =  $fields[$j] ;
-		# Remove white spaces and change it to _
-		$token=~s/ /_/g ;
-		# Replacce - with _
-		$token=~s/-/_/g ;
-		# Replace / with _
-		$token=~s/\//_/g ;
-		# Remove ^M (carriage return if present
-#		$token=~s/\x0D//;
-		# Remove "
-#		$token=~s/["]+//;
-		# Remove all special characters not supported by SQL
-		$token =~ s/[\$#@~!&*()\[\];.,:?^ `\\\/"\x0D\%]+//g;
-		if ( $j == ($size-1) ) {
-			printf($out "\t%s string", $token) ;
-		} else {
-			printf($out "\t%s string,\n", $token) ;
+	if ( $file eq "FY2013_Percent_Change_in_Medicare_Payments.csv" ) {
+		printf($out "\tChange_in_Base_Operating_DRG_Payment_Amount string,\n") ;
+		printf($out "\tNumber_of_Hospitals_Receiving_this__Change string\n") ;
+	} else {
+		$size = @fields ;
+		for(my$j = 0; $j < $size; $j++ ) {
+			$token =  $fields[$j] ;
+			# Remove white spaces and change it to _
+			$token=~s/ /_/g ;
+			# Replace - with _
+			$token=~s/-/_/g ;
+			# Replace / with _
+			$token=~s/\//_/g ;
+			# Remove ^M (carriage return if present
+#			$token=~s/\x0D//;
+			# Remove "
+#			$token=~s/["]+//;
+			$token =~ s/[\$#@~!&*()\[\];.,:?^ `\\\/"\x0D\%]+//g;
+	
+			if ( $j == ($size-1) ) {
+				printf($out "\t%s string", $token) ;
+			} else {
+				printf($out "\t%s string,\n", $token) ;
+			}
 		}
 	}
 	printf($out "\n)\n") ;
