@@ -30,3 +30,4 @@ Once the load_data_lake.sh completes, please
 4. cd ../..
 5.  hive -f hive_base_ddl.sql to create required tables in hive
 
+loading_and_modeling
