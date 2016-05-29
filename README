@@ -5,7 +5,7 @@ This repo contains the exercise_1 assignment for w205
 
 In order to clone the repo do the following
 1.  In the user account (or create a directory which you created for the project), type the command
-git clone git@github.com:ganeshsberkeley/exercise_1.git
+git clone https:ganeshsberkeley/exercise_1.git
 2.  cd exercise_1
 3.  ./load_data_lake.sh
 	This step will create a hosital_compare directory and populate everything required (the directory and contents are part of the repo
