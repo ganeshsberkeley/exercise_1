@@ -1,1 +1,32 @@
+					README
+					------
+
+This repo contains the exercise_1 assignment for w205
+
+In order to clone the repo do the following
+1.  In the user account (or create a directory which you created for the project), type the command
+git clone git@github.com:ganeshsberkeley/exercise_1.git
+2.  cd exercise_1
+3.  ./load_data_lake.sh
+	This step will create a hosital_compare directory and populate everything required (the directory and contents are part of the repo
+	But the scrpt will redo everything)
+
 load_data_lake.sh -> bash script to unzip the master file and rename the files to remove spaces.  Then it pushes the renamed files to hadoop 
+
+The script will do the following
+1.  unzip the Hospital_Revised_Flatfiles.zip
+2.  Create a backup directory and copy the .csv files extracted
+3.  Create a rn_backup directory and copy the .csv files modified (renamed.  Please take a look at script for one exception csv file)
+4.  Copy the extract_header.pl script in the rn_backup
+5.  Remove the headers from the csv file to have the data 
+6.  Copy the files to hadoop /user/w205/exercise_1 directory ( directory will be created if it does not exist in hadoop.  Assumption is that /user/w205 already exists)
+
+extract_header.pl -> Perl script to generate the DDL file based on the header files
+
+Once the load_data_lake.sh completes, please
+1.  cd to hospital_compare/rn_back
+2.  ./extract_header.pl to create hive_base_ddl.sql (please take a look at the script for one exception csv file)
+3.  cp hive_base_ddl.sql ../..
+4. cd ../..
+5.  hive -f hive_base_ddl.sql to create required tables in hive
+
