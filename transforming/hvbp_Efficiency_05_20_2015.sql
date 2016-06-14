@@ -13,7 +13,12 @@ CREATE TABLE hvbp_Efficiency_05_20_2015_log
 	MSPB_1_Improvement_Points	varchar(500),
 	MSPB_1_Measure_Score	varchar(500)
 )
-ROW FORMAT delimited fields terminated by '/t'
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde'
+WITH SERDEPROPERTIES(
+"separatorChar"=",",
+"quoteChar"='"',
+"escapeChar"='\\'
+)
 STORED AS TEXTFILE;
 
 

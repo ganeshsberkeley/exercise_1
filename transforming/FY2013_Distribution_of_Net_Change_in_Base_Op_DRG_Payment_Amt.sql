@@ -4,7 +4,12 @@ CREATE TABLE FY2013_Distribution_of_Net_Change_in_Base_Op_DRG_Payment_Amt_log
 	Percentile	varchar(500),
 	Net_Change_in_Base_Operating_DRG_Payment_Amount	varchar(500)
 )
-ROW FORMAT delimited fields terminated by '/t'
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde'
+WITH SERDEPROPERTIES(
+"separatorChar"=",",
+"quoteChar"='"',
+"escapeChar"='\\'
+)
 STORED AS TEXTFILE;
 
 

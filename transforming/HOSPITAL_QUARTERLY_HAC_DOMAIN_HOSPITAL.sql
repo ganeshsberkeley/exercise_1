@@ -17,7 +17,12 @@ CREATE TABLE HOSPITAL_QUARTERLY_HAC_DOMAIN_HOSPITAL_log
 	Total_HAC_Score	varchar(500),
 	Footnotes	varchar(500)
 )
-ROW FORMAT delimited fields terminated by '/t'
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde'
+WITH SERDEPROPERTIES(
+"separatorChar"=",",
+"quoteChar"='"',
+"escapeChar"='\\'
+)
 STORED AS TEXTFILE;
 
 

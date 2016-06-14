@@ -18,7 +18,12 @@ CREATE TABLE hvbp_tps_05_28_2015_log
 	Weighted_Efficiency_Domain_Score	varchar(500),
 	Total_Performance_Score	varchar(500)
 )
-ROW FORMAT delimited fields terminated by '/t'
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde'
+WITH SERDEPROPERTIES(
+"separatorChar"=",",
+"quoteChar"='"',
+"escapeChar"='\\'
+)
 STORED AS TEXTFILE;
 
 

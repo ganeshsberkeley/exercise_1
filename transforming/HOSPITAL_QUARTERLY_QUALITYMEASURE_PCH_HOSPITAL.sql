@@ -17,7 +17,12 @@ CREATE TABLE HOSPITAL_QUARTERLY_QUALITYMEASURE_PCH_HOSPITAL_log
 	RPTG_PRD_START_DT	varchar(500),
 	RPTG_PRD_END_DT	varchar(500)
 )
-ROW FORMAT delimited fields terminated by '/t'
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde'
+WITH SERDEPROPERTIES(
+"separatorChar"=",",
+"quoteChar"='"',
+"escapeChar"='\\'
+)
 STORED AS TEXTFILE;
 
 

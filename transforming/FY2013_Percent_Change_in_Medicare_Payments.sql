@@ -1,10 +1,16 @@
 DROP TABLE IF EXISTS FY2013_Percent_Change_in_Medicare_Payments_log;
 CREATE TABLE FY2013_Percent_Change_in_Medicare_Payments_log
 (
-	﻿_Change_in_Base_Operating_DRG_Payment_Amount	varchar(500),
-	Number_of_Hospitals_Receiving_this__Change	varchar(500)
+	Change_in_Base_Operating_DRG_Payment_Amount string,
+	Number_of_Hospitals_Receiving_this__Change string
+
 )
-ROW FORMAT delimited fields terminated by '/t'
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde'
+WITH SERDEPROPERTIES(
+"separatorChar"=",",
+"quoteChar"='"',
+"escapeChar"='\\'
+)
 STORED AS TEXTFILE;
 
 

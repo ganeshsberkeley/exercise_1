@@ -1,6 +1,7 @@
 #!/usr/bin/perl
 
-@file_list = `ls ../hospital_compare/rn_backup/*csv` ;
+$path_to_csv = "../hospital_compare/rn_backup" ;
+@file_list = `ls $path_to_csv/*csv` ;
 
 
 
@@ -35,7 +36,7 @@ for(my$i = 0; $i<=$#file_list; $i++)
 	printf($out "DROP TABLE IF EXISTS %s_log;\n", $table) ;
 	printf($out "CREATE TABLE %s_log\n", $table) ;
 	printf($out "(\n") ;
-	if ( $file eq "FY2013_Percent_Change_in_Medicare_Payments.csv" ) {
+	if ( $file eq "$path_to_csv/FY2013_Percent_Change_in_Medicare_Payments.csv" ) {
 		printf($out "\tChange_in_Base_Operating_DRG_Payment_Amount string,\n") ;
 		printf($out "\tNumber_of_Hospitals_Receiving_this__Change string\n") ;
 	} else {
@@ -62,7 +63,12 @@ for(my$i = 0; $i<=$#file_list; $i++)
 		}
 	}
 	printf($out "\n)\n") ;
-	printf($out "ROW FORMAT delimited fields terminated by \'/t\'\n") ;
+        printf($out "ROW FORMAT SERDE \'org.apache.hadoop.hive.serde2.OpenCSVSerde\'\n") ;
+        printf($out "WITH SERDEPROPERTIES(\n") ;
+        printf($out "\"separatorChar\"=\",\",\n");
+        printf($out "\"quoteChar\"=\'\"\',\n");
+        printf($out "\"escapeChar\"=\'\\\\\'\n");
+        printf($out ")\n") ;
 	printf($out "STORED AS TEXTFILE;\n") ;
 	printf($out "\n\nLOAD DATA LOCAL INPATH \"%s\" INTO TABLE %s_log;\n", $file, $table) ;
 

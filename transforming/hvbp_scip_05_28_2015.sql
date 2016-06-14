@@ -18,7 +18,12 @@ CREATE TABLE hvbp_scip_05_28_2015_log
 	SCIP_VTE_2_Measure_Score	varchar(500),
 	SCIP_Condition_Procedure_Score	varchar(500)
 )
-ROW FORMAT delimited fields terminated by '/t'
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde'
+WITH SERDEPROPERTIES(
+"separatorChar"=",",
+"quoteChar"='"',
+"escapeChar"='\\'
+)
 STORED AS TEXTFILE;
 
 

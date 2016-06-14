@@ -35,7 +35,12 @@ CREATE TABLE hvbp_hcahps_05_28_2015_log
 	HCAHPS_Base_Score	varchar(500),
 	HCAHPS_Consistency_Score	varchar(500)
 )
-ROW FORMAT delimited fields terminated by '/t'
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde'
+WITH SERDEPROPERTIES(
+"separatorChar"=",",
+"quoteChar"='"',
+"escapeChar"='\\'
+)
 STORED AS TEXTFILE;
 
 
