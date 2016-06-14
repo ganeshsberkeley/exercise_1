@@ -1,0 +1,8 @@
+This directory contains the PERL script that generates the SQL files needed transformng raw data into a set 0f tables
+
+The script is sql_transform.pl
+
+Please run the ./sql_transform.pl in the transforming window and it will generate all the sql files that are needed for transforming
+
+Then invoke spark-sql from the linux prompt
+Once we are in the sql env we need to load the table one by one
