@@ -1,5 +1,5 @@
-DROP TABLE IF EXISTS payment___hospital_log;
-CREATE TABLE payment___hospital_log
+DROP TABLE IF EXISTS payment___hospital_table;
+CREATE TABLE payment___hospital_table
 (
 	Provider_ID	varchar(500),
 	Hospital_name	varchar(500),
@@ -29,4 +29,4 @@ WITH SERDEPROPERTIES(
 STORED AS TEXTFILE;
 
 
-LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/Payment_-_Hospital.csv" INTO TABLE payment___hospital_log;
+LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/Payment_-_Hospital.csv" INTO TABLE payment___hospital_table;

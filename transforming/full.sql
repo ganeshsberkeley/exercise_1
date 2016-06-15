@@ -1,8 +1,8 @@
 
 
 
-DROP TABLE IF EXISTS complications___hospital_log;
-CREATE TABLE complications___hospital_log
+DROP TABLE IF EXISTS complications___hospital_table;
+CREATE TABLE complications___hospital_table
 (
 	Provider_ID	varchar(500),
 	Hospital_Name	varchar(500),
@@ -32,12 +32,12 @@ WITH SERDEPROPERTIES(
 STORED AS TEXTFILE;
 
 
-LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/Complications_-_Hospital.csv" INTO TABLE complications___hospital_log;
+LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/Complications_-_Hospital.csv" INTO TABLE complications___hospital_table;
 
 
 
-DROP TABLE IF EXISTS complications___national_log;
-CREATE TABLE complications___national_log
+DROP TABLE IF EXISTS complications___national_table;
+CREATE TABLE complications___national_table
 (
 	Measure_Name	varchar(500),
 	Measure_ID	varchar(500),
@@ -59,12 +59,12 @@ WITH SERDEPROPERTIES(
 STORED AS TEXTFILE;
 
 
-LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/Complications_-_National.csv" INTO TABLE complications___national_log;
+LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/Complications_-_National.csv" INTO TABLE complications___national_table;
 
 
 
-DROP TABLE IF EXISTS complications___state_log;
-CREATE TABLE complications___state_log
+DROP TABLE IF EXISTS complications___state_table;
+CREATE TABLE complications___state_table
 (
 	State	varchar(500),
 	Measure_Name	varchar(500),
@@ -86,12 +86,12 @@ WITH SERDEPROPERTIES(
 STORED AS TEXTFILE;
 
 
-LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/Complications_-_State.csv" INTO TABLE complications___state_log;
+LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/Complications_-_State.csv" INTO TABLE complications___state_table;
 
 
 
-DROP TABLE IF EXISTS fy2013_distribution_of_net_change_in_base_op_drg_payment_amt_log;
-CREATE TABLE fy2013_distribution_of_net_change_in_base_op_drg_payment_amt_log
+DROP TABLE IF EXISTS fy2013_distribution_of_net_change_in_base_op_drg_payment_amt_table;
+CREATE TABLE fy2013_distribution_of_net_change_in_base_op_drg_payment_amt_table
 (
 	Percentile	varchar(500),
 	Net_Change_in_Base_Operating_DRG_Payment_Amount	varchar(500)
@@ -105,12 +105,12 @@ WITH SERDEPROPERTIES(
 STORED AS TEXTFILE;
 
 
-LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/FY2013_Distribution_of_Net_Change_in_Base_Op_DRG_Payment_Amt.csv" INTO TABLE fy2013_distribution_of_net_change_in_base_op_drg_payment_amt_log;
+LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/FY2013_Distribution_of_Net_Change_in_Base_Op_DRG_Payment_Amt.csv" INTO TABLE fy2013_distribution_of_net_change_in_base_op_drg_payment_amt_table;
 
 
 
-DROP TABLE IF EXISTS fy2013_net_change_in_base_op_drg_payment_amt_log;
-CREATE TABLE fy2013_net_change_in_base_op_drg_payment_amt_log
+DROP TABLE IF EXISTS fy2013_net_change_in_base_op_drg_payment_amt_table;
+CREATE TABLE fy2013_net_change_in_base_op_drg_payment_amt_table
 (
 	Net_Change_in_Base_Operating_DRG_Payment_Amount	varchar(500),
 	Number_of_Hospitals_Receiving_this_Range	varchar(500)
@@ -124,12 +124,12 @@ WITH SERDEPROPERTIES(
 STORED AS TEXTFILE;
 
 
-LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/FY2013_Net_Change_in_Base_Op_DRG_Payment_Amt.csv" INTO TABLE fy2013_net_change_in_base_op_drg_payment_amt_log;
+LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/FY2013_Net_Change_in_Base_Op_DRG_Payment_Amt.csv" INTO TABLE fy2013_net_change_in_base_op_drg_payment_amt_table;
 
 
 
-DROP TABLE IF EXISTS fy2013_percent_change_in_medicare_payments_log;
-CREATE TABLE fy2013_percent_change_in_medicare_payments_log
+DROP TABLE IF EXISTS fy2013_percent_change_in_medicare_payments_table;
+CREATE TABLE fy2013_percent_change_in_medicare_payments_table
 (
 	Change_in_Base_Operating_DRG_Payment_Amount string,
 	Number_of_Hospitals_Receiving_this__Change string
@@ -144,12 +144,12 @@ WITH SERDEPROPERTIES(
 STORED AS TEXTFILE;
 
 
-LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/FY2013_Percent_Change_in_Medicare_Payments.csv" INTO TABLE fy2013_percent_change_in_medicare_payments_log;
+LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/FY2013_Percent_Change_in_Medicare_Payments.csv" INTO TABLE fy2013_percent_change_in_medicare_payments_table;
 
 
 
-DROP TABLE IF EXISTS fy2013_value_based_incentive_payment_amount_log;
-CREATE TABLE fy2013_value_based_incentive_payment_amount_log
+DROP TABLE IF EXISTS fy2013_value_based_incentive_payment_amount_table;
+CREATE TABLE fy2013_value_based_incentive_payment_amount_table
 (
 	Incentive_Payment_Range	varchar(500),
 	Number_of_Hospitals_Receiving_this_Range	varchar(500)
@@ -163,12 +163,12 @@ WITH SERDEPROPERTIES(
 STORED AS TEXTFILE;
 
 
-LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/FY2013_Value_Based_Incentive_Payment_Amount.csv" INTO TABLE fy2013_value_based_incentive_payment_amount_log;
+LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/FY2013_Value_Based_Incentive_Payment_Amount.csv" INTO TABLE fy2013_value_based_incentive_payment_amount_table;
 
 
 
-DROP TABLE IF EXISTS footnote_crosswalk_log;
-CREATE TABLE footnote_crosswalk_log
+DROP TABLE IF EXISTS footnote_crosswalk_table;
+CREATE TABLE footnote_crosswalk_table
 (
 	Footnote	varchar(500),
 	Footnote_Text	varchar(500)
@@ -182,12 +182,12 @@ WITH SERDEPROPERTIES(
 STORED AS TEXTFILE;
 
 
-LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/Footnote_Crosswalk.csv" INTO TABLE footnote_crosswalk_log;
+LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/Footnote_Crosswalk.csv" INTO TABLE footnote_crosswalk_table;
 
 
 
-DROP TABLE IF EXISTS hcahps___hospital_log;
-CREATE TABLE hcahps___hospital_log
+DROP TABLE IF EXISTS hcahps___hospital_table;
+CREATE TABLE hcahps___hospital_table
 (
 	Provider_ID	varchar(500),
 	Hospital_Name	varchar(500),
@@ -220,12 +220,12 @@ WITH SERDEPROPERTIES(
 STORED AS TEXTFILE;
 
 
-LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/HCAHPS_-_Hospital.csv" INTO TABLE hcahps___hospital_log;
+LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/HCAHPS_-_Hospital.csv" INTO TABLE hcahps___hospital_table;
 
 
 
-DROP TABLE IF EXISTS hcahps___national_log;
-CREATE TABLE hcahps___national_log
+DROP TABLE IF EXISTS hcahps___national_table;
+CREATE TABLE hcahps___national_table
 (
 	HCAHPS_Measure_ID	varchar(500),
 	HCAHPS_Question	varchar(500),
@@ -244,12 +244,12 @@ WITH SERDEPROPERTIES(
 STORED AS TEXTFILE;
 
 
-LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/HCAHPS_-_National.csv" INTO TABLE hcahps___national_log;
+LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/HCAHPS_-_National.csv" INTO TABLE hcahps___national_table;
 
 
 
-DROP TABLE IF EXISTS hcahps___state_log;
-CREATE TABLE hcahps___state_log
+DROP TABLE IF EXISTS hcahps___state_table;
+CREATE TABLE hcahps___state_table
 (
 	State	varchar(500),
 	HCAHPS_Question	varchar(500),
@@ -269,12 +269,12 @@ WITH SERDEPROPERTIES(
 STORED AS TEXTFILE;
 
 
-LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/HCAHPS_-_State.csv" INTO TABLE hcahps___state_log;
+LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/HCAHPS_-_State.csv" INTO TABLE hcahps___state_table;
 
 
 
-DROP TABLE IF EXISTS hospital_quarterly_hac_domain_hospital_log;
-CREATE TABLE hospital_quarterly_hac_domain_hospital_log
+DROP TABLE IF EXISTS hospital_quarterly_hac_domain_hospital_table;
+CREATE TABLE hospital_quarterly_hac_domain_hospital_table
 (
 	Hospital_Name	varchar(500),
 	Provider_ID	varchar(500),
@@ -301,12 +301,12 @@ WITH SERDEPROPERTIES(
 STORED AS TEXTFILE;
 
 
-LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/HOSPITAL_QUARTERLY_HAC_DOMAIN_HOSPITAL.csv" INTO TABLE hospital_quarterly_hac_domain_hospital_log;
+LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/HOSPITAL_QUARTERLY_HAC_DOMAIN_HOSPITAL.csv" INTO TABLE hospital_quarterly_hac_domain_hospital_table;
 
 
 
-DROP TABLE IF EXISTS hospital_quarterly_qualitymeasure_ipfqr_hospital_log;
-CREATE TABLE hospital_quarterly_qualitymeasure_ipfqr_hospital_log
+DROP TABLE IF EXISTS hospital_quarterly_qualitymeasure_ipfqr_hospital_table;
+CREATE TABLE hospital_quarterly_qualitymeasure_ipfqr_hospital_table
 (
 	Provider_Number	varchar(500),
 	Hospital_Name	varchar(500),
@@ -453,12 +453,12 @@ WITH SERDEPROPERTIES(
 STORED AS TEXTFILE;
 
 
-LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/HOSPITAL_QUARTERLY_QUALITYMEASURE_IPFQR_HOSPITAL.csv" INTO TABLE hospital_quarterly_qualitymeasure_ipfqr_hospital_log;
+LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/HOSPITAL_QUARTERLY_QUALITYMEASURE_IPFQR_HOSPITAL.csv" INTO TABLE hospital_quarterly_qualitymeasure_ipfqr_hospital_table;
 
 
 
-DROP TABLE IF EXISTS hospital_quarterly_qualitymeasure_ipfqr_national_log;
-CREATE TABLE hospital_quarterly_qualitymeasure_ipfqr_national_log
+DROP TABLE IF EXISTS hospital_quarterly_qualitymeasure_ipfqr_national_table;
+CREATE TABLE hospital_quarterly_qualitymeasure_ipfqr_national_table
 (
 	N_HBIPS_2_Measure_Description	varchar(500),
 	N_HBIPS_2_Overall_Rate_Per_1000	varchar(500),
@@ -568,12 +568,12 @@ WITH SERDEPROPERTIES(
 STORED AS TEXTFILE;
 
 
-LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/HOSPITAL_QUARTERLY_QUALITYMEASURE_IPFQR_NATIONAL.csv" INTO TABLE hospital_quarterly_qualitymeasure_ipfqr_national_log;
+LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/HOSPITAL_QUARTERLY_QUALITYMEASURE_IPFQR_NATIONAL.csv" INTO TABLE hospital_quarterly_qualitymeasure_ipfqr_national_table;
 
 
 
-DROP TABLE IF EXISTS hospital_quarterly_qualitymeasure_ipfqr_state_log;
-CREATE TABLE hospital_quarterly_qualitymeasure_ipfqr_state_log
+DROP TABLE IF EXISTS hospital_quarterly_qualitymeasure_ipfqr_state_table;
+CREATE TABLE hospital_quarterly_qualitymeasure_ipfqr_state_table
 (
 	State	varchar(500),
 	S_HBIPS_2_Measure_Description	varchar(500),
@@ -684,12 +684,12 @@ WITH SERDEPROPERTIES(
 STORED AS TEXTFILE;
 
 
-LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/HOSPITAL_QUARTERLY_QUALITYMEASURE_IPFQR_STATE.csv" INTO TABLE hospital_quarterly_qualitymeasure_ipfqr_state_log;
+LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/HOSPITAL_QUARTERLY_QUALITYMEASURE_IPFQR_STATE.csv" INTO TABLE hospital_quarterly_qualitymeasure_ipfqr_state_table;
 
 
 
-DROP TABLE IF EXISTS hospital_quarterly_qualitymeasure_pch_hospital_log;
-CREATE TABLE hospital_quarterly_qualitymeasure_pch_hospital_log
+DROP TABLE IF EXISTS hospital_quarterly_qualitymeasure_pch_hospital_table;
+CREATE TABLE hospital_quarterly_qualitymeasure_pch_hospital_table
 (
 	PROVIDER_ID	varchar(500),
 	Hospital_Name	varchar(500),
@@ -716,12 +716,12 @@ WITH SERDEPROPERTIES(
 STORED AS TEXTFILE;
 
 
-LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/HOSPITAL_QUARTERLY_QUALITYMEASURE_PCH_HOSPITAL.csv" INTO TABLE hospital_quarterly_qualitymeasure_pch_hospital_log;
+LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/HOSPITAL_QUARTERLY_QUALITYMEASURE_PCH_HOSPITAL.csv" INTO TABLE hospital_quarterly_qualitymeasure_pch_hospital_table;
 
 
 
-DROP TABLE IF EXISTS healthcare_associated_infections___hospital_log;
-CREATE TABLE healthcare_associated_infections___hospital_log
+DROP TABLE IF EXISTS healthcare_associated_infections___hospital_table;
+CREATE TABLE healthcare_associated_infections___hospital_table
 (
 	Provider_ID	varchar(500),
 	Hospital_Name	varchar(500),
@@ -748,12 +748,12 @@ WITH SERDEPROPERTIES(
 STORED AS TEXTFILE;
 
 
-LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/Healthcare_Associated_Infections_-_Hospital.csv" INTO TABLE healthcare_associated_infections___hospital_log;
+LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/Healthcare_Associated_Infections_-_Hospital.csv" INTO TABLE healthcare_associated_infections___hospital_table;
 
 
 
-DROP TABLE IF EXISTS healthcare_associated_infections___national_log;
-CREATE TABLE healthcare_associated_infections___national_log
+DROP TABLE IF EXISTS healthcare_associated_infections___national_table;
+CREATE TABLE healthcare_associated_infections___national_table
 (
 	Measure_Name	varchar(500),
 	Measure_ID	varchar(500),
@@ -771,12 +771,12 @@ WITH SERDEPROPERTIES(
 STORED AS TEXTFILE;
 
 
-LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/Healthcare_Associated_Infections_-_National.csv" INTO TABLE healthcare_associated_infections___national_log;
+LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/Healthcare_Associated_Infections_-_National.csv" INTO TABLE healthcare_associated_infections___national_table;
 
 
 
-DROP TABLE IF EXISTS healthcare_associated_infections___state_log;
-CREATE TABLE healthcare_associated_infections___state_log
+DROP TABLE IF EXISTS healthcare_associated_infections___state_table;
+CREATE TABLE healthcare_associated_infections___state_table
 (
 	State	varchar(500),
 	Measure_Name	varchar(500),
@@ -795,12 +795,12 @@ WITH SERDEPROPERTIES(
 STORED AS TEXTFILE;
 
 
-LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/Healthcare_Associated_Infections_-_State.csv" INTO TABLE healthcare_associated_infections___state_log;
+LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/Healthcare_Associated_Infections_-_State.csv" INTO TABLE healthcare_associated_infections___state_table;
 
 
 
-DROP TABLE IF EXISTS hospital_general_information_log;
-CREATE TABLE hospital_general_information_log
+DROP TABLE IF EXISTS hospital_general_information_table;
+CREATE TABLE hospital_general_information_table
 (
 	Provider_ID	varchar(500),
 	Hospital_Name	varchar(500),
@@ -823,12 +823,12 @@ WITH SERDEPROPERTIES(
 STORED AS TEXTFILE;
 
 
-LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/Hospital_General_Information.csv" INTO TABLE hospital_general_information_log;
+LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/Hospital_General_Information.csv" INTO TABLE hospital_general_information_table;
 
 
 
-DROP TABLE IF EXISTS measure_dates_log;
-CREATE TABLE measure_dates_log
+DROP TABLE IF EXISTS measure_dates_table;
+CREATE TABLE measure_dates_table
 (
 	Measure_Name	varchar(500),
 	Measure_ID	varchar(500),
@@ -846,12 +846,12 @@ WITH SERDEPROPERTIES(
 STORED AS TEXTFILE;
 
 
-LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/Measure_Dates.csv" INTO TABLE measure_dates_log;
+LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/Measure_Dates.csv" INTO TABLE measure_dates_table;
 
 
 
-DROP TABLE IF EXISTS medicare_hospital_spending_by_claim_log;
-CREATE TABLE medicare_hospital_spending_by_claim_log
+DROP TABLE IF EXISTS medicare_hospital_spending_by_claim_table;
+CREATE TABLE medicare_hospital_spending_by_claim_table
 (
 	Hospital_Name	varchar(500),
 	Provider_Number	varchar(500),
@@ -876,12 +876,12 @@ WITH SERDEPROPERTIES(
 STORED AS TEXTFILE;
 
 
-LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/Medicare_Hospital_Spending_by_Claim.csv" INTO TABLE medicare_hospital_spending_by_claim_log;
+LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/Medicare_Hospital_Spending_by_Claim.csv" INTO TABLE medicare_hospital_spending_by_claim_table;
 
 
 
-DROP TABLE IF EXISTS medicare_hospital_spending_per_patient___hospital_log;
-CREATE TABLE medicare_hospital_spending_per_patient___hospital_log
+DROP TABLE IF EXISTS medicare_hospital_spending_per_patient___hospital_table;
+CREATE TABLE medicare_hospital_spending_per_patient___hospital_table
 (
 	Provider_ID	varchar(500),
 	Hospital_Name	varchar(500),
@@ -907,12 +907,12 @@ WITH SERDEPROPERTIES(
 STORED AS TEXTFILE;
 
 
-LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/Medicare_Hospital_Spending_per_Patient_-_Hospital.csv" INTO TABLE medicare_hospital_spending_per_patient___hospital_log;
+LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/Medicare_Hospital_Spending_per_Patient_-_Hospital.csv" INTO TABLE medicare_hospital_spending_per_patient___hospital_table;
 
 
 
-DROP TABLE IF EXISTS medicare_hospital_spending_per_patient___national_log;
-CREATE TABLE medicare_hospital_spending_per_patient___national_log
+DROP TABLE IF EXISTS medicare_hospital_spending_per_patient___national_table;
+CREATE TABLE medicare_hospital_spending_per_patient___national_table
 (
 	Measure_Name	varchar(500),
 	Measure_ID	varchar(500),
@@ -932,12 +932,12 @@ WITH SERDEPROPERTIES(
 STORED AS TEXTFILE;
 
 
-LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/Medicare_Hospital_Spending_per_Patient_-_National.csv" INTO TABLE medicare_hospital_spending_per_patient___national_log;
+LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/Medicare_Hospital_Spending_per_Patient_-_National.csv" INTO TABLE medicare_hospital_spending_per_patient___national_table;
 
 
 
-DROP TABLE IF EXISTS medicare_hospital_spending_per_patient___state_log;
-CREATE TABLE medicare_hospital_spending_per_patient___state_log
+DROP TABLE IF EXISTS medicare_hospital_spending_per_patient___state_table;
+CREATE TABLE medicare_hospital_spending_per_patient___state_table
 (
 	State	varchar(500),
 	Measure_Name	varchar(500),
@@ -956,12 +956,12 @@ WITH SERDEPROPERTIES(
 STORED AS TEXTFILE;
 
 
-LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/Medicare_Hospital_Spending_per_Patient_-_State.csv" INTO TABLE medicare_hospital_spending_per_patient___state_log;
+LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/Medicare_Hospital_Spending_per_Patient_-_State.csv" INTO TABLE medicare_hospital_spending_per_patient___state_table;
 
 
 
-DROP TABLE IF EXISTS outpatient_imaging_efficiency___hospital_log;
-CREATE TABLE outpatient_imaging_efficiency___hospital_log
+DROP TABLE IF EXISTS outpatient_imaging_efficiency___hospital_table;
+CREATE TABLE outpatient_imaging_efficiency___hospital_table
 (
 	Provider_ID	varchar(500),
 	Hospital_Name	varchar(500),
@@ -987,12 +987,12 @@ WITH SERDEPROPERTIES(
 STORED AS TEXTFILE;
 
 
-LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/Outpatient_Imaging_Efficiency_-_Hospital.csv" INTO TABLE outpatient_imaging_efficiency___hospital_log;
+LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/Outpatient_Imaging_Efficiency_-_Hospital.csv" INTO TABLE outpatient_imaging_efficiency___hospital_table;
 
 
 
-DROP TABLE IF EXISTS outpatient_imaging_efficiency___national_log;
-CREATE TABLE outpatient_imaging_efficiency___national_log
+DROP TABLE IF EXISTS outpatient_imaging_efficiency___national_table;
+CREATE TABLE outpatient_imaging_efficiency___national_table
 (
 	Measure_ID	varchar(500),
 	Measure_Name	varchar(500),
@@ -1010,12 +1010,12 @@ WITH SERDEPROPERTIES(
 STORED AS TEXTFILE;
 
 
-LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/Outpatient_Imaging_Efficiency_-_National.csv" INTO TABLE outpatient_imaging_efficiency___national_log;
+LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/Outpatient_Imaging_Efficiency_-_National.csv" INTO TABLE outpatient_imaging_efficiency___national_table;
 
 
 
-DROP TABLE IF EXISTS outpatient_imaging_efficiency___state_log;
-CREATE TABLE outpatient_imaging_efficiency___state_log
+DROP TABLE IF EXISTS outpatient_imaging_efficiency___state_table;
+CREATE TABLE outpatient_imaging_efficiency___state_table
 (
 	State	varchar(500),
 	Measure_ID	varchar(500),
@@ -1034,12 +1034,12 @@ WITH SERDEPROPERTIES(
 STORED AS TEXTFILE;
 
 
-LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/Outpatient_Imaging_Efficiency_-_State.csv" INTO TABLE outpatient_imaging_efficiency___state_log;
+LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/Outpatient_Imaging_Efficiency_-_State.csv" INTO TABLE outpatient_imaging_efficiency___state_table;
 
 
 
-DROP TABLE IF EXISTS outpatient_procedures___volume_log;
-CREATE TABLE outpatient_procedures___volume_log
+DROP TABLE IF EXISTS outpatient_procedures___volume_table;
+CREATE TABLE outpatient_procedures___volume_table
 (
 	Provider_ID	varchar(500),
 	Hospital_Name	varchar(500),
@@ -1063,12 +1063,12 @@ WITH SERDEPROPERTIES(
 STORED AS TEXTFILE;
 
 
-LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/Outpatient_Procedures_-_Volume.csv" INTO TABLE outpatient_procedures___volume_log;
+LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/Outpatient_Procedures_-_Volume.csv" INTO TABLE outpatient_procedures___volume_table;
 
 
 
-DROP TABLE IF EXISTS payment___hospital_log;
-CREATE TABLE payment___hospital_log
+DROP TABLE IF EXISTS payment___hospital_table;
+CREATE TABLE payment___hospital_table
 (
 	Provider_ID	varchar(500),
 	Hospital_name	varchar(500),
@@ -1098,12 +1098,12 @@ WITH SERDEPROPERTIES(
 STORED AS TEXTFILE;
 
 
-LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/Payment_-_Hospital.csv" INTO TABLE payment___hospital_log;
+LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/Payment_-_Hospital.csv" INTO TABLE payment___hospital_table;
 
 
 
-DROP TABLE IF EXISTS payment___national_log;
-CREATE TABLE payment___national_log
+DROP TABLE IF EXISTS payment___national_table;
+CREATE TABLE payment___national_table
 (
 	Measure_Name	varchar(500),
 	Measure_ID	varchar(500),
@@ -1125,12 +1125,12 @@ WITH SERDEPROPERTIES(
 STORED AS TEXTFILE;
 
 
-LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/Payment_-_National.csv" INTO TABLE payment___national_log;
+LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/Payment_-_National.csv" INTO TABLE payment___national_table;
 
 
 
-DROP TABLE IF EXISTS payment___state_log;
-CREATE TABLE payment___state_log
+DROP TABLE IF EXISTS payment___state_table;
+CREATE TABLE payment___state_table
 (
 	State	varchar(500),
 	Measure_Name	varchar(500),
@@ -1152,12 +1152,12 @@ WITH SERDEPROPERTIES(
 STORED AS TEXTFILE;
 
 
-LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/Payment_-_State.csv" INTO TABLE payment___state_log;
+LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/Payment_-_State.csv" INTO TABLE payment___state_table;
 
 
 
-DROP TABLE IF EXISTS readmission_reduction_log;
-CREATE TABLE readmission_reduction_log
+DROP TABLE IF EXISTS readmission_reduction_table;
+CREATE TABLE readmission_reduction_table
 (
 	Hospital_Name	varchar(500),
 	Provider_Number	varchar(500),
@@ -1181,12 +1181,12 @@ WITH SERDEPROPERTIES(
 STORED AS TEXTFILE;
 
 
-LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/READMISSION_REDUCTION.csv" INTO TABLE readmission_reduction_log;
+LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/READMISSION_REDUCTION.csv" INTO TABLE readmission_reduction_table;
 
 
 
-DROP TABLE IF EXISTS readmissions_and_deaths___hospital_log;
-CREATE TABLE readmissions_and_deaths___hospital_log
+DROP TABLE IF EXISTS readmissions_and_deaths___hospital_table;
+CREATE TABLE readmissions_and_deaths___hospital_table
 (
 	Provider_ID	varchar(500),
 	Hospital_Name	varchar(500),
@@ -1216,12 +1216,12 @@ WITH SERDEPROPERTIES(
 STORED AS TEXTFILE;
 
 
-LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/Readmissions_and_Deaths_-_Hospital.csv" INTO TABLE readmissions_and_deaths___hospital_log;
+LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/Readmissions_and_Deaths_-_Hospital.csv" INTO TABLE readmissions_and_deaths___hospital_table;
 
 
 
-DROP TABLE IF EXISTS readmissions_and_deaths___national_log;
-CREATE TABLE readmissions_and_deaths___national_log
+DROP TABLE IF EXISTS readmissions_and_deaths___national_table;
+CREATE TABLE readmissions_and_deaths___national_table
 (
 	Measure_Name	varchar(500),
 	Measure_ID	varchar(500),
@@ -1243,12 +1243,12 @@ WITH SERDEPROPERTIES(
 STORED AS TEXTFILE;
 
 
-LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/Readmissions_and_Deaths_-_National.csv" INTO TABLE readmissions_and_deaths___national_log;
+LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/Readmissions_and_Deaths_-_National.csv" INTO TABLE readmissions_and_deaths___national_table;
 
 
 
-DROP TABLE IF EXISTS readmissions_and_deaths___state_log;
-CREATE TABLE readmissions_and_deaths___state_log
+DROP TABLE IF EXISTS readmissions_and_deaths___state_table;
+CREATE TABLE readmissions_and_deaths___state_table
 (
 	State	varchar(500),
 	Measure_Name	varchar(500),
@@ -1270,12 +1270,12 @@ WITH SERDEPROPERTIES(
 STORED AS TEXTFILE;
 
 
-LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/Readmissions_and_Deaths_-_State.csv" INTO TABLE readmissions_and_deaths___state_log;
+LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/Readmissions_and_Deaths_-_State.csv" INTO TABLE readmissions_and_deaths___state_table;
 
 
 
-DROP TABLE IF EXISTS structural_measures___hospital_log;
-CREATE TABLE structural_measures___hospital_log
+DROP TABLE IF EXISTS structural_measures___hospital_table;
+CREATE TABLE structural_measures___hospital_table
 (
 	Provider_ID	varchar(500),
 	Hospital_Name	varchar(500),
@@ -1301,12 +1301,12 @@ WITH SERDEPROPERTIES(
 STORED AS TEXTFILE;
 
 
-LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/Structural_Measures_-_Hospital.csv" INTO TABLE structural_measures___hospital_log;
+LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/Structural_Measures_-_Hospital.csv" INTO TABLE structural_measures___hospital_table;
 
 
 
-DROP TABLE IF EXISTS timely_and_effective_care___hospital_log;
-CREATE TABLE timely_and_effective_care___hospital_log
+DROP TABLE IF EXISTS timely_and_effective_care___hospital_table;
+CREATE TABLE timely_and_effective_care___hospital_table
 (
 	Provider_ID	varchar(500),
 	Hospital_Name	varchar(500),
@@ -1334,12 +1334,12 @@ WITH SERDEPROPERTIES(
 STORED AS TEXTFILE;
 
 
-LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/Timely_and_Effective_Care_-_Hospital.csv" INTO TABLE timely_and_effective_care___hospital_log;
+LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/Timely_and_Effective_Care_-_Hospital.csv" INTO TABLE timely_and_effective_care___hospital_table;
 
 
 
-DROP TABLE IF EXISTS timely_and_effective_care___national_log;
-CREATE TABLE timely_and_effective_care___national_log
+DROP TABLE IF EXISTS timely_and_effective_care___national_table;
+CREATE TABLE timely_and_effective_care___national_table
 (
 	Measure_Name	varchar(500),
 	Measure_ID	varchar(500),
@@ -1359,12 +1359,12 @@ WITH SERDEPROPERTIES(
 STORED AS TEXTFILE;
 
 
-LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/Timely_and_Effective_Care_-_National.csv" INTO TABLE timely_and_effective_care___national_log;
+LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/Timely_and_Effective_Care_-_National.csv" INTO TABLE timely_and_effective_care___national_table;
 
 
 
-DROP TABLE IF EXISTS timely_and_effective_care___state_log;
-CREATE TABLE timely_and_effective_care___state_log
+DROP TABLE IF EXISTS timely_and_effective_care___state_table;
+CREATE TABLE timely_and_effective_care___state_table
 (
 	State	varchar(500),
 	Condition	varchar(500),
@@ -1384,12 +1384,12 @@ WITH SERDEPROPERTIES(
 STORED AS TEXTFILE;
 
 
-LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/Timely_and_Effective_Care_-_State.csv" INTO TABLE timely_and_effective_care___state_log;
+LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/Timely_and_Effective_Care_-_State.csv" INTO TABLE timely_and_effective_care___state_table;
 
 
 
-DROP TABLE IF EXISTS hvbp_efficiency_05_20_2015_log;
-CREATE TABLE hvbp_efficiency_05_20_2015_log
+DROP TABLE IF EXISTS hvbp_efficiency_05_20_2015_table;
+CREATE TABLE hvbp_efficiency_05_20_2015_table
 (
 	Provider_Number	varchar(500),
 	Hospital_Name	varchar(500),
@@ -1412,12 +1412,12 @@ WITH SERDEPROPERTIES(
 STORED AS TEXTFILE;
 
 
-LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/hvbp_Efficiency_05_20_2015.csv" INTO TABLE hvbp_efficiency_05_20_2015_log;
+LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/hvbp_Efficiency_05_20_2015.csv" INTO TABLE hvbp_efficiency_05_20_2015_table;
 
 
 
-DROP TABLE IF EXISTS hvbp_ami_05_28_2015_log;
-CREATE TABLE hvbp_ami_05_28_2015_log
+DROP TABLE IF EXISTS hvbp_ami_05_28_2015_table;
+CREATE TABLE hvbp_ami_05_28_2015_table
 (
 	Provider_Number	varchar(500),
 	Hospital_Name	varchar(500),
@@ -1445,12 +1445,12 @@ WITH SERDEPROPERTIES(
 STORED AS TEXTFILE;
 
 
-LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/hvbp_ami_05_28_2015.csv" INTO TABLE hvbp_ami_05_28_2015_log;
+LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/hvbp_ami_05_28_2015.csv" INTO TABLE hvbp_ami_05_28_2015_table;
 
 
 
-DROP TABLE IF EXISTS hvbp_hai_05_28_2015_log;
-CREATE TABLE hvbp_hai_05_28_2015_log
+DROP TABLE IF EXISTS hvbp_hai_05_28_2015_table;
+CREATE TABLE hvbp_hai_05_28_2015_table
 (
 	Provider_Number	varchar(500),
 	Hospital_Name	varchar(500),
@@ -1490,12 +1490,12 @@ WITH SERDEPROPERTIES(
 STORED AS TEXTFILE;
 
 
-LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/hvbp_hai_05_28_2015.csv" INTO TABLE hvbp_hai_05_28_2015_log;
+LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/hvbp_hai_05_28_2015.csv" INTO TABLE hvbp_hai_05_28_2015_table;
 
 
 
-DROP TABLE IF EXISTS hvbp_hcahps_05_28_2015_log;
-CREATE TABLE hvbp_hcahps_05_28_2015_log
+DROP TABLE IF EXISTS hvbp_hcahps_05_28_2015_table;
+CREATE TABLE hvbp_hcahps_05_28_2015_table
 (
 	Provider_Number	varchar(500),
 	Hospital_Name	varchar(500),
@@ -1540,12 +1540,12 @@ WITH SERDEPROPERTIES(
 STORED AS TEXTFILE;
 
 
-LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/hvbp_hcahps_05_28_2015.csv" INTO TABLE hvbp_hcahps_05_28_2015_log;
+LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/hvbp_hcahps_05_28_2015.csv" INTO TABLE hvbp_hcahps_05_28_2015_table;
 
 
 
-DROP TABLE IF EXISTS hvbp_hf_05_28_2015_log;
-CREATE TABLE hvbp_hf_05_28_2015_log
+DROP TABLE IF EXISTS hvbp_hf_05_28_2015_table;
+CREATE TABLE hvbp_hf_05_28_2015_table
 (
 	Provider_Number	varchar(500),
 	Hospital_Name	varchar(500),
@@ -1569,12 +1569,12 @@ WITH SERDEPROPERTIES(
 STORED AS TEXTFILE;
 
 
-LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/hvbp_hf_05_28_2015.csv" INTO TABLE hvbp_hf_05_28_2015_log;
+LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/hvbp_hf_05_28_2015.csv" INTO TABLE hvbp_hf_05_28_2015_table;
 
 
 
-DROP TABLE IF EXISTS hvbp_outcome_05_18_2015_log;
-CREATE TABLE hvbp_outcome_05_18_2015_log
+DROP TABLE IF EXISTS hvbp_outcome_05_18_2015_table;
+CREATE TABLE hvbp_outcome_05_18_2015_table
 (
 	Provider_Number	varchar(500),
 	Hospital_Name	varchar(500),
@@ -1613,12 +1613,12 @@ WITH SERDEPROPERTIES(
 STORED AS TEXTFILE;
 
 
-LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/hvbp_outcome_05_18_2015.csv" INTO TABLE hvbp_outcome_05_18_2015_log;
+LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/hvbp_outcome_05_18_2015.csv" INTO TABLE hvbp_outcome_05_18_2015_table;
 
 
 
-DROP TABLE IF EXISTS hvbp_pn_05_28_2015_log;
-CREATE TABLE hvbp_pn_05_28_2015_log
+DROP TABLE IF EXISTS hvbp_pn_05_28_2015_table;
+CREATE TABLE hvbp_pn_05_28_2015_table
 (
 	Provider_Number	varchar(500),
 	Hospital_Name	varchar(500),
@@ -1646,12 +1646,12 @@ WITH SERDEPROPERTIES(
 STORED AS TEXTFILE;
 
 
-LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/hvbp_pn_05_28_2015.csv" INTO TABLE hvbp_pn_05_28_2015_log;
+LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/hvbp_pn_05_28_2015.csv" INTO TABLE hvbp_pn_05_28_2015_table;
 
 
 
-DROP TABLE IF EXISTS hvbp_quarters_log;
-CREATE TABLE hvbp_quarters_log
+DROP TABLE IF EXISTS hvbp_quarters_table;
+CREATE TABLE hvbp_quarters_table
 (
 	Measure_ID	varchar(500),
 	Measure_Description	varchar(500),
@@ -1667,12 +1667,12 @@ WITH SERDEPROPERTIES(
 STORED AS TEXTFILE;
 
 
-LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/hvbp_quarters.csv" INTO TABLE hvbp_quarters_log;
+LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/hvbp_quarters.csv" INTO TABLE hvbp_quarters_table;
 
 
 
-DROP TABLE IF EXISTS hvbp_scip_05_28_2015_log;
-CREATE TABLE hvbp_scip_05_28_2015_log
+DROP TABLE IF EXISTS hvbp_scip_05_28_2015_table;
+CREATE TABLE hvbp_scip_05_28_2015_table
 (
 	Provider_Number	varchar(500),
 	Hospital_Name	varchar(500),
@@ -1700,12 +1700,12 @@ WITH SERDEPROPERTIES(
 STORED AS TEXTFILE;
 
 
-LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/hvbp_scip_05_28_2015.csv" INTO TABLE hvbp_scip_05_28_2015_log;
+LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/hvbp_scip_05_28_2015.csv" INTO TABLE hvbp_scip_05_28_2015_table;
 
 
 
-DROP TABLE IF EXISTS hvbp_tps_05_28_2015_log;
-CREATE TABLE hvbp_tps_05_28_2015_log
+DROP TABLE IF EXISTS hvbp_tps_05_28_2015_table;
+CREATE TABLE hvbp_tps_05_28_2015_table
 (
 	Provider_Number	varchar(500),
 	Hospital_Name	varchar(500),
@@ -1733,4 +1733,4 @@ WITH SERDEPROPERTIES(
 STORED AS TEXTFILE;
 
 
-LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/hvbp_tps_05_28_2015.csv" INTO TABLE hvbp_tps_05_28_2015_log;
+LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/hvbp_tps_05_28_2015.csv" INTO TABLE hvbp_tps_05_28_2015_table;

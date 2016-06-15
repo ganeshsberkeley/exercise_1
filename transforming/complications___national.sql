@@ -1,5 +1,5 @@
-DROP TABLE IF EXISTS complications___national_log;
-CREATE TABLE complications___national_log
+DROP TABLE IF EXISTS complications___national_table;
+CREATE TABLE complications___national_table
 (
 	Measure_Name	varchar(500),
 	Measure_ID	varchar(500),
@@ -21,4 +21,4 @@ WITH SERDEPROPERTIES(
 STORED AS TEXTFILE;
 
 
-LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/Complications_-_National.csv" INTO TABLE complications___national_log;
+LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/Complications_-_National.csv" INTO TABLE complications___national_table;

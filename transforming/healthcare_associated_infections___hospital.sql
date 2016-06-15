@@ -1,5 +1,5 @@
-DROP TABLE IF EXISTS healthcare_associated_infections___hospital_log;
-CREATE TABLE healthcare_associated_infections___hospital_log
+DROP TABLE IF EXISTS healthcare_associated_infections___hospital_table;
+CREATE TABLE healthcare_associated_infections___hospital_table
 (
 	Provider_ID	varchar(500),
 	Hospital_Name	varchar(500),
@@ -26,4 +26,4 @@ WITH SERDEPROPERTIES(
 STORED AS TEXTFILE;
 
 
-LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/Healthcare_Associated_Infections_-_Hospital.csv" INTO TABLE healthcare_associated_infections___hospital_log;
+LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/Healthcare_Associated_Infections_-_Hospital.csv" INTO TABLE healthcare_associated_infections___hospital_table;

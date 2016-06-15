@@ -1,5 +1,5 @@
-DROP TABLE IF EXISTS measure_dates_log;
-CREATE TABLE measure_dates_log
+DROP TABLE IF EXISTS measure_dates_table;
+CREATE TABLE measure_dates_table
 (
 	Measure_Name	varchar(500),
 	Measure_ID	varchar(500),
@@ -17,4 +17,4 @@ WITH SERDEPROPERTIES(
 STORED AS TEXTFILE;
 
 
-LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/Measure_Dates.csv" INTO TABLE measure_dates_log;
+LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/Measure_Dates.csv" INTO TABLE measure_dates_table;

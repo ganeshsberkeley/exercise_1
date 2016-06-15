@@ -1,5 +1,5 @@
-DROP TABLE IF EXISTS hcahps___national_log;
-CREATE TABLE hcahps___national_log
+DROP TABLE IF EXISTS hcahps___national_table;
+CREATE TABLE hcahps___national_table
 (
 	HCAHPS_Measure_ID	varchar(500),
 	HCAHPS_Question	varchar(500),
@@ -18,4 +18,4 @@ WITH SERDEPROPERTIES(
 STORED AS TEXTFILE;
 
 
-LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/HCAHPS_-_National.csv" INTO TABLE hcahps___national_log;
+LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/HCAHPS_-_National.csv" INTO TABLE hcahps___national_table;

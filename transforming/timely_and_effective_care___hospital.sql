@@ -1,5 +1,5 @@
-DROP TABLE IF EXISTS timely_and_effective_care___hospital_log;
-CREATE TABLE timely_and_effective_care___hospital_log
+DROP TABLE IF EXISTS timely_and_effective_care___hospital_table;
+CREATE TABLE timely_and_effective_care___hospital_table
 (
 	Provider_ID	varchar(500),
 	Hospital_Name	varchar(500),
@@ -27,4 +27,4 @@ WITH SERDEPROPERTIES(
 STORED AS TEXTFILE;
 
 
-LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/Timely_and_Effective_Care_-_Hospital.csv" INTO TABLE timely_and_effective_care___hospital_log;
+LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/Timely_and_Effective_Care_-_Hospital.csv" INTO TABLE timely_and_effective_care___hospital_table;

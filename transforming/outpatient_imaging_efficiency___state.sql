@@ -1,5 +1,5 @@
-DROP TABLE IF EXISTS outpatient_imaging_efficiency___state_log;
-CREATE TABLE outpatient_imaging_efficiency___state_log
+DROP TABLE IF EXISTS outpatient_imaging_efficiency___state_table;
+CREATE TABLE outpatient_imaging_efficiency___state_table
 (
 	State	varchar(500),
 	Measure_ID	varchar(500),
@@ -18,4 +18,4 @@ WITH SERDEPROPERTIES(
 STORED AS TEXTFILE;
 
 
-LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/Outpatient_Imaging_Efficiency_-_State.csv" INTO TABLE outpatient_imaging_efficiency___state_log;
+LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/Outpatient_Imaging_Efficiency_-_State.csv" INTO TABLE outpatient_imaging_efficiency___state_table;

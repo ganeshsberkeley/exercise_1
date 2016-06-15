@@ -1,5 +1,5 @@
-DROP TABLE IF EXISTS medicare_hospital_spending_by_claim_log;
-CREATE TABLE medicare_hospital_spending_by_claim_log
+DROP TABLE IF EXISTS medicare_hospital_spending_by_claim_table;
+CREATE TABLE medicare_hospital_spending_by_claim_table
 (
 	Hospital_Name	varchar(500),
 	Provider_Number	varchar(500),
@@ -24,4 +24,4 @@ WITH SERDEPROPERTIES(
 STORED AS TEXTFILE;
 
 
-LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/Medicare_Hospital_Spending_by_Claim.csv" INTO TABLE medicare_hospital_spending_by_claim_log;
+LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/Medicare_Hospital_Spending_by_Claim.csv" INTO TABLE medicare_hospital_spending_by_claim_table;

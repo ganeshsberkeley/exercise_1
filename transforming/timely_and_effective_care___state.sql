@@ -1,5 +1,5 @@
-DROP TABLE IF EXISTS timely_and_effective_care___state_log;
-CREATE TABLE timely_and_effective_care___state_log
+DROP TABLE IF EXISTS timely_and_effective_care___state_table;
+CREATE TABLE timely_and_effective_care___state_table
 (
 	State	varchar(500),
 	Condition	varchar(500),
@@ -19,4 +19,4 @@ WITH SERDEPROPERTIES(
 STORED AS TEXTFILE;
 
 
-LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/Timely_and_Effective_Care_-_State.csv" INTO TABLE timely_and_effective_care___state_log;
+LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/Timely_and_Effective_Care_-_State.csv" INTO TABLE timely_and_effective_care___state_table;

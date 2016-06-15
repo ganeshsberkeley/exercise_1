@@ -1,5 +1,5 @@
-DROP TABLE IF EXISTS hvbp_tps_05_28_2015_log;
-CREATE TABLE hvbp_tps_05_28_2015_log
+DROP TABLE IF EXISTS hvbp_tps_05_28_2015_table;
+CREATE TABLE hvbp_tps_05_28_2015_table
 (
 	Provider_Number	varchar(500),
 	Hospital_Name	varchar(500),
@@ -27,4 +27,4 @@ WITH SERDEPROPERTIES(
 STORED AS TEXTFILE;
 
 
-LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/hvbp_tps_05_28_2015.csv" INTO TABLE hvbp_tps_05_28_2015_log;
+LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/hvbp_tps_05_28_2015.csv" INTO TABLE hvbp_tps_05_28_2015_table;

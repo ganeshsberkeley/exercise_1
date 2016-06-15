@@ -35,12 +35,12 @@ for(my$i = 0; $i<=$#file_list; $i++)
 	my $out_file = "$table.sql" ;
 	open my $out, '>', $out_file or die "Could not open $out_file $!\n";
 
-	printf($out "DROP TABLE IF EXISTS %s_log;\n", $table) ;
-	printf($out "CREATE TABLE %s_log\n", $table) ;
+	printf($out "DROP TABLE IF EXISTS %s_table;\n", $table) ;
+	printf($out "CREATE TABLE %s_table\n", $table) ;
 	printf($out "(\n") ;
 
-	printf($full "\n\n\nDROP TABLE IF EXISTS %s_log;\n", $table) ;
-	printf($full "CREATE TABLE %s_log\n", $table) ;
+	printf($full "\n\n\nDROP TABLE IF EXISTS %s_table;\n", $table) ;
+	printf($full "CREATE TABLE %s_table\n", $table) ;
 	printf($full "(\n") ;
 
 	if ( $file eq "$path_to_csv/FY2013_Percent_Change_in_Medicare_Payments.csv" ) {
@@ -81,7 +81,7 @@ for(my$i = 0; $i<=$#file_list; $i++)
         printf($out "\"escapeChar\"=\'\\\\\'\n");
         printf($out ")\n") ;
 	printf($out "STORED AS TEXTFILE;\n") ;
-	printf($out "\n\nLOAD DATA LOCAL INPATH \"%s\" INTO TABLE %s_log;\n", $file, $table) ;
+	printf($out "\n\nLOAD DATA LOCAL INPATH \"%s\" INTO TABLE %s_table;\n", $file, $table) ;
 
 	printf($full "\n)\n") ;
         printf($full "ROW FORMAT SERDE \'org.apache.hadoop.hive.serde2.OpenCSVSerde\'\n") ;
@@ -91,7 +91,7 @@ for(my$i = 0; $i<=$#file_list; $i++)
         printf($full "\"escapeChar\"=\'\\\\\'\n");
         printf($full ")\n") ;
 	printf($full "STORED AS TEXTFILE;\n") ;
-	printf($full "\n\nLOAD DATA LOCAL INPATH \"%s\" INTO TABLE %s_log;\n", $file, $table) ;
+	printf($full "\n\nLOAD DATA LOCAL INPATH \"%s\" INTO TABLE %s_table;\n", $file, $table) ;
 
 
 	close($out) ;

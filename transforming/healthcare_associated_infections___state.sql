@@ -1,5 +1,5 @@
-DROP TABLE IF EXISTS healthcare_associated_infections___state_log;
-CREATE TABLE healthcare_associated_infections___state_log
+DROP TABLE IF EXISTS healthcare_associated_infections___state_table;
+CREATE TABLE healthcare_associated_infections___state_table
 (
 	State	varchar(500),
 	Measure_Name	varchar(500),
@@ -18,4 +18,4 @@ WITH SERDEPROPERTIES(
 STORED AS TEXTFILE;
 
 
-LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/Healthcare_Associated_Infections_-_State.csv" INTO TABLE healthcare_associated_infections___state_log;
+LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/Healthcare_Associated_Infections_-_State.csv" INTO TABLE healthcare_associated_infections___state_table;

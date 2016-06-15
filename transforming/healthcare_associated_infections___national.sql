@@ -1,5 +1,5 @@
-DROP TABLE IF EXISTS healthcare_associated_infections___national_log;
-CREATE TABLE healthcare_associated_infections___national_log
+DROP TABLE IF EXISTS healthcare_associated_infections___national_table;
+CREATE TABLE healthcare_associated_infections___national_table
 (
 	Measure_Name	varchar(500),
 	Measure_ID	varchar(500),
@@ -17,4 +17,4 @@ WITH SERDEPROPERTIES(
 STORED AS TEXTFILE;
 
 
-LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/Healthcare_Associated_Infections_-_National.csv" INTO TABLE healthcare_associated_infections___national_log;
+LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/Healthcare_Associated_Infections_-_National.csv" INTO TABLE healthcare_associated_infections___national_table;

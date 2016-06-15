@@ -1,5 +1,5 @@
-DROP TABLE IF EXISTS outpatient_imaging_efficiency___hospital_log;
-CREATE TABLE outpatient_imaging_efficiency___hospital_log
+DROP TABLE IF EXISTS outpatient_imaging_efficiency___hospital_table;
+CREATE TABLE outpatient_imaging_efficiency___hospital_table
 (
 	Provider_ID	varchar(500),
 	Hospital_Name	varchar(500),
@@ -25,4 +25,4 @@ WITH SERDEPROPERTIES(
 STORED AS TEXTFILE;
 
 
-LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/Outpatient_Imaging_Efficiency_-_Hospital.csv" INTO TABLE outpatient_imaging_efficiency___hospital_log;
+LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/Outpatient_Imaging_Efficiency_-_Hospital.csv" INTO TABLE outpatient_imaging_efficiency___hospital_table;

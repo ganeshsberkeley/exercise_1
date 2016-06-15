@@ -1,5 +1,5 @@
-DROP TABLE IF EXISTS hvbp_efficiency_05_20_2015_log;
-CREATE TABLE hvbp_efficiency_05_20_2015_log
+DROP TABLE IF EXISTS hvbp_efficiency_05_20_2015_table;
+CREATE TABLE hvbp_efficiency_05_20_2015_table
 (
 	Provider_Number	varchar(500),
 	Hospital_Name	varchar(500),
@@ -22,4 +22,4 @@ WITH SERDEPROPERTIES(
 STORED AS TEXTFILE;
 
 
-LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/hvbp_Efficiency_05_20_2015.csv" INTO TABLE hvbp_efficiency_05_20_2015_log;
+LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/hvbp_Efficiency_05_20_2015.csv" INTO TABLE hvbp_efficiency_05_20_2015_table;

@@ -1,5 +1,5 @@
-DROP TABLE IF EXISTS outpatient_procedures___volume_log;
-CREATE TABLE outpatient_procedures___volume_log
+DROP TABLE IF EXISTS outpatient_procedures___volume_table;
+CREATE TABLE outpatient_procedures___volume_table
 (
 	Provider_ID	varchar(500),
 	Hospital_Name	varchar(500),
@@ -23,4 +23,4 @@ WITH SERDEPROPERTIES(
 STORED AS TEXTFILE;
 
 
-LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/Outpatient_Procedures_-_Volume.csv" INTO TABLE outpatient_procedures___volume_log;
+LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/Outpatient_Procedures_-_Volume.csv" INTO TABLE outpatient_procedures___volume_table;

@@ -1,5 +1,5 @@
-DROP TABLE IF EXISTS hospital_quarterly_hac_domain_hospital_log;
-CREATE TABLE hospital_quarterly_hac_domain_hospital_log
+DROP TABLE IF EXISTS hospital_quarterly_hac_domain_hospital_table;
+CREATE TABLE hospital_quarterly_hac_domain_hospital_table
 (
 	Hospital_Name	varchar(500),
 	Provider_ID	varchar(500),
@@ -26,4 +26,4 @@ WITH SERDEPROPERTIES(
 STORED AS TEXTFILE;
 
 
-LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/HOSPITAL_QUARTERLY_HAC_DOMAIN_HOSPITAL.csv" INTO TABLE hospital_quarterly_hac_domain_hospital_log;
+LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/HOSPITAL_QUARTERLY_HAC_DOMAIN_HOSPITAL.csv" INTO TABLE hospital_quarterly_hac_domain_hospital_table;

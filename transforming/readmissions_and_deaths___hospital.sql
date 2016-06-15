@@ -1,5 +1,5 @@
-DROP TABLE IF EXISTS readmissions_and_deaths___hospital_log;
-CREATE TABLE readmissions_and_deaths___hospital_log
+DROP TABLE IF EXISTS readmissions_and_deaths___hospital_table;
+CREATE TABLE readmissions_and_deaths___hospital_table
 (
 	Provider_ID	varchar(500),
 	Hospital_Name	varchar(500),
@@ -29,4 +29,4 @@ WITH SERDEPROPERTIES(
 STORED AS TEXTFILE;
 
 
-LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/Readmissions_and_Deaths_-_Hospital.csv" INTO TABLE readmissions_and_deaths___hospital_log;
+LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/Readmissions_and_Deaths_-_Hospital.csv" INTO TABLE readmissions_and_deaths___hospital_table;

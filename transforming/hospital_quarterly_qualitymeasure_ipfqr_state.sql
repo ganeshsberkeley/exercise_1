@@ -1,5 +1,5 @@
-DROP TABLE IF EXISTS hospital_quarterly_qualitymeasure_ipfqr_state_log;
-CREATE TABLE hospital_quarterly_qualitymeasure_ipfqr_state_log
+DROP TABLE IF EXISTS hospital_quarterly_qualitymeasure_ipfqr_state_table;
+CREATE TABLE hospital_quarterly_qualitymeasure_ipfqr_state_table
 (
 	State	varchar(500),
 	S_HBIPS_2_Measure_Description	varchar(500),
@@ -110,4 +110,4 @@ WITH SERDEPROPERTIES(
 STORED AS TEXTFILE;
 
 
-LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/HOSPITAL_QUARTERLY_QUALITYMEASURE_IPFQR_STATE.csv" INTO TABLE hospital_quarterly_qualitymeasure_ipfqr_state_log;
+LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/HOSPITAL_QUARTERLY_QUALITYMEASURE_IPFQR_STATE.csv" INTO TABLE hospital_quarterly_qualitymeasure_ipfqr_state_table;

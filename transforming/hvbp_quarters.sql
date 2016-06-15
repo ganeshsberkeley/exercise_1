@@ -1,5 +1,5 @@
-DROP TABLE IF EXISTS hvbp_quarters_log;
-CREATE TABLE hvbp_quarters_log
+DROP TABLE IF EXISTS hvbp_quarters_table;
+CREATE TABLE hvbp_quarters_table
 (
 	Measure_ID	varchar(500),
 	Measure_Description	varchar(500),
@@ -15,4 +15,4 @@ WITH SERDEPROPERTIES(
 STORED AS TEXTFILE;
 
 
-LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/hvbp_quarters.csv" INTO TABLE hvbp_quarters_log;
+LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/hvbp_quarters.csv" INTO TABLE hvbp_quarters_table;

@@ -1,5 +1,5 @@
-DROP TABLE IF EXISTS hospital_general_information_log;
-CREATE TABLE hospital_general_information_log
+DROP TABLE IF EXISTS hospital_general_information_table;
+CREATE TABLE hospital_general_information_table
 (
 	Provider_ID	varchar(500),
 	Hospital_Name	varchar(500),
@@ -22,4 +22,4 @@ WITH SERDEPROPERTIES(
 STORED AS TEXTFILE;
 
 
-LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/Hospital_General_Information.csv" INTO TABLE hospital_general_information_log;
+LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/Hospital_General_Information.csv" INTO TABLE hospital_general_information_table;

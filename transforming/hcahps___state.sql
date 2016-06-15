@@ -1,5 +1,5 @@
-DROP TABLE IF EXISTS hcahps___state_log;
-CREATE TABLE hcahps___state_log
+DROP TABLE IF EXISTS hcahps___state_table;
+CREATE TABLE hcahps___state_table
 (
 	State	varchar(500),
 	HCAHPS_Question	varchar(500),
@@ -19,4 +19,4 @@ WITH SERDEPROPERTIES(
 STORED AS TEXTFILE;
 
 
-LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/HCAHPS_-_State.csv" INTO TABLE hcahps___state_log;
+LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/HCAHPS_-_State.csv" INTO TABLE hcahps___state_table;

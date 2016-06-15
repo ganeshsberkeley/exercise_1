@@ -1,5 +1,5 @@
-DROP TABLE IF EXISTS readmission_reduction_log;
-CREATE TABLE readmission_reduction_log
+DROP TABLE IF EXISTS readmission_reduction_table;
+CREATE TABLE readmission_reduction_table
 (
 	Hospital_Name	varchar(500),
 	Provider_Number	varchar(500),
@@ -23,4 +23,4 @@ WITH SERDEPROPERTIES(
 STORED AS TEXTFILE;
 
 
-LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/READMISSION_REDUCTION.csv" INTO TABLE readmission_reduction_log;
+LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/READMISSION_REDUCTION.csv" INTO TABLE readmission_reduction_table;

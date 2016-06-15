@@ -1,5 +1,5 @@
-DROP TABLE IF EXISTS medicare_hospital_spending_per_patient___state_log;
-CREATE TABLE medicare_hospital_spending_per_patient___state_log
+DROP TABLE IF EXISTS medicare_hospital_spending_per_patient___state_table;
+CREATE TABLE medicare_hospital_spending_per_patient___state_table
 (
 	State	varchar(500),
 	Measure_Name	varchar(500),
@@ -18,4 +18,4 @@ WITH SERDEPROPERTIES(
 STORED AS TEXTFILE;
 
 
-LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/Medicare_Hospital_Spending_per_Patient_-_State.csv" INTO TABLE medicare_hospital_spending_per_patient___state_log;
+LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/Medicare_Hospital_Spending_per_Patient_-_State.csv" INTO TABLE medicare_hospital_spending_per_patient___state_table;

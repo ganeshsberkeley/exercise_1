@@ -1,5 +1,5 @@
-DROP TABLE IF EXISTS fy2013_percent_change_in_medicare_payments_log;
-CREATE TABLE fy2013_percent_change_in_medicare_payments_log
+DROP TABLE IF EXISTS fy2013_percent_change_in_medicare_payments_table;
+CREATE TABLE fy2013_percent_change_in_medicare_payments_table
 (
 	Change_in_Base_Operating_DRG_Payment_Amount string,
 	Number_of_Hospitals_Receiving_this__Change string
@@ -14,4 +14,4 @@ WITH SERDEPROPERTIES(
 STORED AS TEXTFILE;
 
 
-LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/FY2013_Percent_Change_in_Medicare_Payments.csv" INTO TABLE fy2013_percent_change_in_medicare_payments_log;
+LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/FY2013_Percent_Change_in_Medicare_Payments.csv" INTO TABLE fy2013_percent_change_in_medicare_payments_table;

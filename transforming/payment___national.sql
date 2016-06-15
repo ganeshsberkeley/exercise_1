@@ -1,5 +1,5 @@
-DROP TABLE IF EXISTS payment___national_log;
-CREATE TABLE payment___national_log
+DROP TABLE IF EXISTS payment___national_table;
+CREATE TABLE payment___national_table
 (
 	Measure_Name	varchar(500),
 	Measure_ID	varchar(500),
@@ -21,4 +21,4 @@ WITH SERDEPROPERTIES(
 STORED AS TEXTFILE;
 
 
-LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/Payment_-_National.csv" INTO TABLE payment___national_log;
+LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/Payment_-_National.csv" INTO TABLE payment___national_table;

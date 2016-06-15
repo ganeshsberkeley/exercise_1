@@ -1,5 +1,5 @@
-DROP TABLE IF EXISTS hospital_quarterly_qualitymeasure_pch_hospital_log;
-CREATE TABLE hospital_quarterly_qualitymeasure_pch_hospital_log
+DROP TABLE IF EXISTS hospital_quarterly_qualitymeasure_pch_hospital_table;
+CREATE TABLE hospital_quarterly_qualitymeasure_pch_hospital_table
 (
 	PROVIDER_ID	varchar(500),
 	Hospital_Name	varchar(500),
@@ -26,4 +26,4 @@ WITH SERDEPROPERTIES(
 STORED AS TEXTFILE;
 
 
-LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/HOSPITAL_QUARTERLY_QUALITYMEASURE_PCH_HOSPITAL.csv" INTO TABLE hospital_quarterly_qualitymeasure_pch_hospital_log;
+LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/HOSPITAL_QUARTERLY_QUALITYMEASURE_PCH_HOSPITAL.csv" INTO TABLE hospital_quarterly_qualitymeasure_pch_hospital_table;

@@ -1,5 +1,5 @@
-DROP TABLE IF EXISTS footnote_crosswalk_log;
-CREATE TABLE footnote_crosswalk_log
+DROP TABLE IF EXISTS footnote_crosswalk_table;
+CREATE TABLE footnote_crosswalk_table
 (
 	Footnote	varchar(500),
 	Footnote_Text	varchar(500)
@@ -13,4 +13,4 @@ WITH SERDEPROPERTIES(
 STORED AS TEXTFILE;
 
 
-LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/Footnote_Crosswalk.csv" INTO TABLE footnote_crosswalk_log;
+LOAD DATA LOCAL INPATH "../hospital_compare/rn_backup/Footnote_Crosswalk.csv" INTO TABLE footnote_crosswalk_table;
