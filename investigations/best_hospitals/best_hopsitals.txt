@@ -1,0 +1,38 @@
+Answer to best_hospitals
+--------------------------
+
+The best_hospitals.sql query returns the top 10 best hospital names in the nation for hospitals which have their statistics available in survery response data
+
+
+The quesry is 3 steps
+Step one: Look into Survey response data (hvbp_hcahps_05_28_2015_table) and
+and clean up all the colums that hae the non-available data in them.  A new
+table called new_hvbp_hcahps_05_28_2015_table is created.  This table is
+organized as per the survery response score determine the best hosptial
+Step 2: From the new table it looks at the scores for each hospital for
+various surveys as given by the colums (cleaned up columns) and aggregates
+them.  It also calcualtes the avreage of the scores
+Step 3: It calculates the top 10 hospitals and displays
+
+The formaat is
+
+Hospital Name || Overall Rating || Aggregate Score || Average Score
+UNIVERSITY OF ALABAMA HOSPITAL  9 out of 10     111     5.045454545454546
+MARION REGIONAL MEDICAL CENTER  9 out of 10     188     8.545454545454545
+ARIZONA ORTHOPEDIC AND SURGICAL SPECIALITY HOSP 9 out of 10     171 7.7727272727272725
+MILLS-PENINSULA MEDICAL CENTER  9 out of 10     73      3.3181818181818183
+PRESBYTERIAN INTERCOMMUNITY HOSPITAL    9 out of 10     73 3.3181818181818183
+HOAG MEMORIAL HOSPITAL PRESBYTERIAN     9 out of 10     64 2.909090909090909
+SANTA BARBARA COTTAGE HOSPITAL  9 out of 10     81      3.6818181818181817
+ST ANTHONY SUMMIT MEDICAL CENTER        9 out of 10     111 5.045454545454546
+MEDICAL CENTER OF THE ROCKIES   9 out of 10     61      2.772727272727273
+ORTHOCOLORADO HOSPITAL AT ST ANTHONY MED CAMPUS 9 out of 10     140 6.363636363636363
+
+Justification
+-------------
+I used the survey response to order the hospitals and ordered the responses in
+decending order
+Then using that order I calculated reponses to each item of the survey to
+report`
+ 
+

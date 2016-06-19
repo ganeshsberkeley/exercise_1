@@ -1,0 +1,63 @@
+Answer to hospital_variability
+--------------------------
+
+The hospital_variability.sql query returns the top 10 variability in hospitals
+between 
+1. the expected readmission rate (mean) and actual readmission rate
+2. the predicted readmission rate and actual readmission rate
+3. the expected readmission rate (mean) and predicted readmission rate 
+
+
+The query has two steps
+
+Step one: Preparation and cleanup of readmission_reduction data to removed the
+non-available data
+Step 2: For each case the difference is printed out along with the hospital
+name and state
+
+The format is
+
+Hospital Name || State || Number_of_Readmissions || Expected_Readmission_Rate || Number_of_Readmissions-Expected_Readmission_Rate
+FLORIDA HOSPITAL        FL      879     22.5    856.5
+COMMUNITY MEDICAL CENTER        NJ      623     22.7    600.3
+SOUTHCOAST HOSPITAL GROUP, INC  MA      619     20.4    598.6
+NEW YORK-PRESBYTERIAN HOSPITAL  NY      619     22.7    596.3
+FLORIDA HOSPITAL        FL      603     19.7    583.3
+BEAUMONT HOSPITAL, ROYAL OAK    MI      596     24.1    571.9
+COMMUNITY MEDICAL CENTER        NJ      588     24.2    563.8
+SOUTHCOAST HOSPITAL GROUP, INC  MA      574     22.5    551.5
+METHODIST HEALTHCARE MEMPHIS HOSPITALS  TN      564     22.2    541.8
+CHRISTIANA CARE HEALTH SERVICES, INC.   DE      546     22.5    523.5
+
+Hospital Name || State || Number_of_Readmissions || Predicted_Readmission_Rate || Number_of_Readmissions-Predicted_Readmission_Rate
+FLORIDA HOSPITAL        FL      879     24.5    854.5
+COMMUNITY MEDICAL CENTER        NJ      623     22.7    600.3
+SOUTHCOAST HOSPITAL GROUP, INC  MA      619     23.7    595.3
+NEW YORK-PRESBYTERIAN HOSPITAL  NY      619     24.8    594.2
+FLORIDA HOSPITAL        FL      603     22.0    581.0
+BEAUMONT HOSPITAL, ROYAL OAK    MI      596     25.6    570.4
+COMMUNITY MEDICAL CENTER        NJ      588     26.6    561.4
+SOUTHCOAST HOSPITAL GROUP, INC  MA      574     24.9    549.1
+METHODIST HEALTHCARE MEMPHIS HOSPITALS  TN      564     23.5    540.5
+CHRISTIANA CARE HEALTH SERVICES, INC.   DE      546     21.8    524.2
+
+Hospital Name || State || Predicted_Readmission_Rate || Expected_Readmission_Rate || Predicted_Readmission_Rate-Expected_Readmission_Rate
+HARLAN ARH HOSPITAL     KY      32.8    23.6    9.199999999999996
+PALISADES MEDICAL CENTER        NJ      31.2    23.8    7.399999999999999
+UNIVERSITY HOSPITAL OF BROOKLYN ( DOWNSTATE )   NY      30.4    23.0
+7.399999999999999
+PINEVILLE COMMUNITY HOSPITAL    KY      30.3    23.7    6.600000000000001
+MONROE COUNTY MEDICAL CENTER    KY      25.3    18.8    6.5
+HAZARD ARH REGIONAL MEDICAL CENTER      KY      31.0    24.6
+6.399999999999999
+LUTHERAN MEDICAL CENTER NY      31.0    24.8    6.199999999999999
+CONEY ISLAND HOSPITAL   NY      29.4    23.3    6.099999999999998
+CLINCH VALLEY MEDICAL CENTER    VA      30.0    24.0    6.0
+ST JOHN'S RIVERSIDE HOSPITAL    NY      29.3    23.4    5.900000000000002
+
+Justification
+-------------
+I used the table beacuse the readmission rate shows the care given by the
+hospital for the primary cause that reflects the variablity in qualit of care
+ 
+

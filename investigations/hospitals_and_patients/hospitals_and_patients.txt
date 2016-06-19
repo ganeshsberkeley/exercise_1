@@ -1,0 +1,28 @@
+Answer to hospitals_and_patients
+--------------------------
+
+The hospitals_and_patients.sql query returns the top 10 types of outpatient
+care visits to hospital
+
+The query has two steps
+
+Step one: Preparation and cleanup of hospitals_and_patients data to removed the
+non-available data
+Step 2: Sort each condition in descending order and print the top 10
+
+Hospital_Name ||  Provider_ID || Gastrointestinal || Eye || Nervous System || Musculoskeletal Skin || Genitourinary || Cardiovascular
+MEDICAL CENTER ENTERPRISE       010049  998     27      91      251     62 33      30
+ADVENTIST BOLINGBROOK HOSPITAL  140304  997     189     1330    805     1241 195     108
+ST MARKS HOSPITAL       460047  997     129     1957    931     238     374 607
+HEALTH CENTRAL  100030  995     58      488     824     886     294     799
+HAYS MEDICAL CENTER     170013  995     245     986     571     1395    788 513
+SOUTHWESTERN MEDICAL CENTER, LLC        370097  995     0       79      494 674     274     46
+PORTNEUF MEDICAL CENTER 130028  994     385     499     999     1449    396 611
+CHESTER COUNTY HOSPITAL 390179  993     0       55      1246    1762    538 641
+ST LUKE'S MEDICAL CENTER        030037  989     1129    7079    1127    2041 10      505
+
+Justification
+-------------
+I used this table to determine the hospital patient relation for out patients
+ 
+

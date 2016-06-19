@@ -1,0 +1,32 @@
+Answer to best_states
+--------------------------
+
+The best_states.sql query returns the top 10 best states in the nation for hospitals which have their statistics available in survery response data
+
+
+The quesry is 2 steps
+Step one: Look into Survey response data (hvbp_hcahps_05_28_2015_table) and
+and clean up all the colums that hae the non-available data in them.  A new
+table called new_hvbp_hcahps_05_28_2015_table is created.  This table is
+organized as per the survery response score determine the best hosptial
+Step 2: It determines the count of tp 10 states
+The output is
+CA      277
+TX      257
+FL      159
+NY      148
+PA      141
+OH      123
+IL      122
+GA      97
+MI      87
+NC      84
+
+
+Justification
+-------------
+I used the survey response to order the hospitals and counted the number of
+hospitas which had reponse from the survey.
+I did that because patients who care about the hospital they went to will
+respond to the survey.  So I used that to deteremine the states where people
+cared to respond for the surveys
