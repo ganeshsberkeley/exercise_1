@@ -1,0 +1,3 @@
+This directory contains the investigation scripts for best_states
+The file needs to imported into spark-sql.  The assumption is that the full.sql was aleady loaded
+

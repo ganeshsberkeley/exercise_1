@@ -1,0 +1,3 @@
+This directory contains the investigation scripts for hospitals_and_patients
+The file needs to imported into spark-sql.  The assumption is that the full.sql was aleady loaded
+

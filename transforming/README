@@ -6,3 +6,5 @@ Please run the ./sql_transform.pl in the transforming window and it will generat
 
 Then invoke spark-sql from the linux prompt
 Once we are in the sql env we need to load the table one by one
+
+Also we can do spark-sql -i full.sql to load all the tables in one shot

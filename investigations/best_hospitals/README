@@ -1,0 +1,2 @@
+This directory contains the sql for best hospitals
+The file needs to imported into spark-sql.  The assumption is that the full.sql was aleady loaded
